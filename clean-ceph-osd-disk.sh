@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Get Device from user
-echo "Enter Device Name, Like '/dev/sdb/' :"
+echo -n "Enter Device Name, Like '/dev/sdb/' : "
 read device_name
 echo "Device '$device_name' Selected"
 

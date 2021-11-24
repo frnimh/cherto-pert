@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
 # get domain name from user
-echo "Enter your Domain:"
+echo -n "Enter your Domain: "
 read domain
 
 # Get IP
-echo "Enter your Domain IP:"
+echo -n "Enter your Domain IP: "
 read ip
 
 # Get Validation Days
-echo "Enter Validation days:"
+echo -n "Enter Validation days: "
 read days
 
 # Generate SSL
