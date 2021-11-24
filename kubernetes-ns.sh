@@ -29,6 +29,6 @@ case $NUMBER in
     ;;
 
   *)
-    echo -n "unknown"
+    echo "unknown"
     ;;
 esac
