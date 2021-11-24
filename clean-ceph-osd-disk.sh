@@ -8,6 +8,7 @@ echo "Device '$device_name' Selected"
 # Set User Device Input to DISK clean
 DISK=$device_name
 
+# from https://ceph.rook.io/
 # Zap the disk to a fresh, usable state (zap-all is important, b/c MBR has to be clean)
 
 # You will have to run this step for all disks.
