@@ -50,14 +50,14 @@ if [ $WANT = 'new' ]; then
 
     if [ $USING = 'cloud' ]; then
         # Get Cloudflare API
-        echo -n "Enter your Cloudflare API Key: "
+        echo -n "Enter your Cloudflare API Token: "
         read capi
-        echo -n "Enter your Cloudflare Email: "
-        read cemail
+        echo -n "Enter your Cloudflare Account ID: "
+        read cid
         
         # Set Api
-        export CF_Key="$capi"
-        export CF_Email="$cemail"
+        export CF_Token="$capi"
+        export CF_Account_ID="$cid"
 
         echo " "
         echo " "
