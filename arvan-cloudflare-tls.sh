@@ -3,10 +3,11 @@
 # check acme.sh installed or aliases set
 
 ARED='\x1b[31;1m'
-AURL='\x1b[4m'
+AURL='\x1b[39;49m'
 
 if ! acme.sh 2>&1 1>/dev/null; then
-        echo -e "${ARED}acme not installed or aliases not set${NC}\ncheckout ${AURL}https://github.com/acmesh-official/acme.sh/wiki/How-to-install"
+        echo -e "${ARED}acme not installed or aliases not set"
+	echo -e "checkout ${AURL}https://github.com/acmesh-official/acme.sh/wiki/How-to-install"
         exit 1
 fi
 
