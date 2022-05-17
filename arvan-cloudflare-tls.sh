@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# check acme.sh installed or aliases set
+
+ARED='\x1b[31;1m'
+AURL='\x1b[4m'
+
+if ! acme.sh 2>&1 1>/dev/null; then
+        echo -e "${ARED}acme not installed or aliases not set${NC}\ncheckout ${AURL}https://github.com/acmesh-official/acme.sh/wiki/How-to-install"
+        exit 1
+fi
+
 # Get from user
 echo "1- Get New TLS (Default)"
 echo "2- Renew Your TLS"
@@ -63,7 +73,7 @@ if [ $WANT = 'new' ]; then
         echo " "
 
         # Issue a cert
-        $HOME/.acme.sh/acme.sh --issue --dns dns_cf -d $domain --server letsencrypt
+        acme.sh --issue --dns dns_cf -d $domain --server letsencrypt
 
     elif [ $USING = 'arvan' ]; then
         # Get Arvan API
@@ -77,7 +87,7 @@ if [ $WANT = 'new' ]; then
         echo " "
 
         # Issue a cert
-        $HOME/.acme.sh/acme.sh --issue --dns dns_arvan -d $domain --server letsencrypt
+        acme.sh --issue --dns dns_arvan -d $domain --server letsencrypt
 
     else
         echo "new unknow"
@@ -90,13 +100,13 @@ elif [ $WANT = 'renew' ]; then
         echo " "
 
         # Renew a cert from cloudflare
-        $HOME/.acme.sh/acme.sh --issue --dns dns_cf -d $domain --server letsencrypt --renew --force
+        acme.sh --issue --dns dns_cf -d $domain --server letsencrypt --renew --force
 
     elif [ $USING = 'arvan' ]; then
         echo " "
 
         # Renew a cert
-        $HOME/.acme.sh/acme.sh --issue --dns dns_arvan -d $domain --server letsencrypt --renew --force
+        acme.sh --issue --dns dns_arvan -d $domain --server letsencrypt --renew --force
 
     else
         echo "renew unknow"
