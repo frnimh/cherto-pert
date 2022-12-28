@@ -4,8 +4,9 @@
 
 ARED='\x1b[31;1m'
 AURL='\x1b[39;49m'
+ACME="$HOME/.acme.sh/"
 
-if ! acme.sh 2>&1 1>/dev/null; then
+if ! [ ${ACME}/acme.sh 2>&1 1>/dev/null ] && [ acme.sh 2>&1 1>/dev/null ]; then
         echo -e "${ARED}acme not installed or aliases not set"
 	echo -e "checkout ${AURL}https://github.com/acmesh-official/acme.sh/wiki/How-to-install"
         exit 1
